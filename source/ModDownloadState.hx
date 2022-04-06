@@ -189,6 +189,16 @@ class ModDownloadState extends MusicBeatState
 				canExit = true;
 				alreadyPressed = false;
 				return;
+			} else if(coolParsed._aFiles[0]._bContainsExe) {
+				coolText.text = "Error! Mod Contains EXE! Can't Compile";
+				canExit = true;
+				alreadyPressed = false;
+				return;
+			} else if(coolParsed._aSupportedModManagers[0]._sInstallerName != 'FileDaddy') {
+				coolText.text = "Error! This Is Not A Friday Night Funkin' Mod";
+				canExit = true;
+				alreadyPressed = false;
+				return;
 			}
 
 			coolText.text = 'Downloading ${coolParsed._aFiles[0]._sFile}...';
